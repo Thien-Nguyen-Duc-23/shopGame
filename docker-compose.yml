@@ -1,0 +1,68 @@
+version: '3'
+networks:
+    laravel:
+        driver: bridge
+services:
+    nginx:
+        container_name: "shop_game_nginx"
+        image: nginx:alpine
+        tty: true
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./:/var/www
+            - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+        depends_on:
+            - app
+        networks:
+            - laravel
+    app:
+        container_name: "shop_game_app"
+        build: docker/app
+        volumes:
+            - ./:/var/www:cached
+        working_dir: /var/www/adminshopgame
+        depends_on:
+            - db
+        networks:
+            - laravel
+    db:
+        container_name: "shop_game_db"
+        platform: linux/x86_64
+        image: mysql:5.7
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: shopgame
+            MYSQL_USER: user
+            MYSQL_PASSWORD: password
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./docker/mysql/db-data:/var/lib/mysql:cached
+            - ./docker/mysql/mysql_confd:/etc/mysql/conf.d:cached
+        networks:
+            - laravel
+    phpmyadmin:
+        platform: linux/amd64
+        container_name: "shop_game_phpmyadmin"
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - "8080:80"
+        volumes:
+            - /sessions
+        depends_on:
+            - db
+        networks:
+            - laravel
+    mailhog:
+        platform: linux/amd64
+        container_name: "shop_game_mailhog"
+        image: mailhog/mailhog
+        ports:
+            - "1025:1025"
+            - "8025:8025"
+        networks:
+            - laravel
+volumes:
+    db-data:
