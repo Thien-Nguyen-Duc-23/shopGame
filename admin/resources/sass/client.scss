@@ -1,0 +1,74 @@
+// Variables
+@import 'variables';
+
+// // Bootstrap
+// @import 'bootstrap/scss/bootstrap';
+
+.charge {
+  &-form {
+    max-width: 384px;
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: .5rem;
+
+    &_item {
+      label {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        height: 2.5rem;
+        border-radius: .25rem;
+    
+        >img {
+          filter: grayscale(100%);
+        }
+      }
+    
+      [type=radio] {
+        &:checked + label {
+          border: 2px solid $color-red;
+    
+          >img {
+            filter: grayscale(0%);
+          }
+        }
+      }
+    }
+  }
+
+  &-note {
+    padding: 5px;
+    border: 2px solid $color-yellow;
+    color: $color-red;
+    font-size: 14px;
+  }
+
+  &-history {
+    h2 {
+      font-size: 18px;
+    }
+
+    &_desc {
+      font-size: 14px;
+    }
+  }
+}
+
+.payments {
+  button {
+    background-color: $color-gray;
+    width: 100%;
+
+    img {
+      width: 1.5rem;
+    }
+
+    span {
+      font-size: 16px;
+    }
+  }
+}
+ No newline at end of file

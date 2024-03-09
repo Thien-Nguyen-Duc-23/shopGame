@@ -28,6 +28,7 @@ mix.js("resources/js/app.js", "public/js")
     .js("resources/js/admin/log_activity.js", "public/js/admin")
 
     .sass("resources/sass/admin.scss", "public/css")
+    .sass("resources/sass/client.scss", "public/css")
     .sass("resources/sass/app.scss", "public/css");
 
 mix.copy("resources/images", "public/images");

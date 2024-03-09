@@ -16,6 +16,7 @@
     {{-- Font Awesome 5  --}}
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.min.css') }}">
     {{-- Custom style --}}
+    <link rel="stylesheet" href="{{ asset('css/client.css') }}?token={{ time() }}">
     <link rel="stylesheet" href="{{ asset('css/mystyle.css') }}">
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" href="{{ asset('libraries/admin/css/slick/slick.css') }}" />
@@ -144,6 +145,48 @@
             </div>
         </div>
         <!-- End Modal Register -->
+
+        <!-- Modal chanrge money-->
+        <div class="modal fade" id="modal-chanrge-money" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">NẠP TIỀN - CHUYỂN KHOẢN QUA</div>
+                    <div class="modal-body">
+                        <div class="row payments">
+                            <div class="col-4">
+                                <button class="btn py-2" type="button">
+                                    <img src="images/payments/bank.png" class="img-fluid my-1 me-2">
+                                    <span>ATM</span>
+                                </button>
+                            </div>
+                            <div class="col-4">
+                                <button class="btn py-2" type="button">
+                                    <img src="images/payments/momo.png" class="img-fluid my-1 me-2">
+                                    <span>ATM</span>
+                                </button>
+                            </div>
+                            <div class="col-4">
+                                <button class="btn py-2" type="button">
+                                    <img src="images/payments/zalopay.jpeg" class="img-fluid my-1 me-2">
+                                    <span>ATM</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="">
+                                    <p><span><i class="bx bx-caret-right"></i></span> Hệ thống nạp <b class="tw-text-red-600">ATM/MOMO tự động 24/24</b>, Nạp 100k nhận 110k tiền shop</p>
+                                    <p><span><i class="bx bx-caret-right"></i></span><b> Lưu ý: </b> Chuyển tiền nhanh 24/7 để tránh bị treo, chậm tiền! Nếu gửi đúng stk và nội dung mà 30p không nhận được tiền hoặc chuyển ghi sai nội dung vui lòng liên hệ page để được hỗ trợ.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal chanrge money -->
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="{{ asset('libraries/select2/js/select2.min.js') }}"></script>

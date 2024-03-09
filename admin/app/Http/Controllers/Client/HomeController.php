@@ -19,9 +19,10 @@ class HomeController extends Controller
     public function home(Request $request)
     {
         // dd(md5('e3bd72f7dff16c795bbb872cf9cf38c2'.'86321077117'.'buycard'.'32464'));
-        return view("clients.home", [
-            'sliders' => $this->sliderRepository->getSliderListHome(),
-            'categories' => $this->categoryRepository->getListCategoryHomePage($request)
-        ]);
+        // return view("clients.home", [
+        //     'sliders' => $this->sliderRepository->getSliderListHome(),
+        //     'categories' => $this->categoryRepository->getListCategoryHomePage($request)
+        // ]);
+        return view("clients.home2");
     }
 }
