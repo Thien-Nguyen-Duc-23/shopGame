@@ -4,7 +4,7 @@ networks:
         driver: bridge
 services:
     nginx:
-        container_name: "shop_game_nginx"
+        container_name: "shop_game_nginx_2"
         image: nginx:alpine
         tty: true
         ports:
@@ -18,7 +18,7 @@ services:
         networks:
             - laravel
     app:
-        container_name: "shop_game_app"
+        container_name: "shop_game_app_2"
         build: docker/app
         volumes:
             - ./:/var/www:cached
@@ -28,7 +28,7 @@ services:
         networks:
             - laravel
     db:
-        container_name: "shop_game_db"
+        container_name: "shop_game_db_2"
         platform: linux/x86_64
         image: mysql:5.7
         environment:
@@ -45,7 +45,7 @@ services:
             - laravel
     phpmyadmin:
         platform: linux/amd64
-        container_name: "shop_game_phpmyadmin"
+        container_name: "shop_game_phpmyadmin_2"
         image: phpmyadmin/phpmyadmin
         ports:
             - "8080:80"
@@ -57,7 +57,7 @@ services:
             - laravel
     mailhog:
         platform: linux/amd64
-        container_name: "shop_game_mailhog"
+        container_name: "shop_game_mailhog2"
         image: mailhog/mailhog
         ports:
             - "1025:1025"
