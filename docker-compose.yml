@@ -22,7 +22,7 @@ services:
         build: docker/app
         volumes:
             - ./:/var/www:cached
-        working_dir: /var/www/adminshopgame
+        working_dir: /var/www/admin
         depends_on:
             - db
         networks:
