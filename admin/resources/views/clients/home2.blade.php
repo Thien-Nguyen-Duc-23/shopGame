@@ -4,7 +4,8 @@
     <section class="top-section-2 detail-page py-4">
         <div class="container">
             <div class="row">
-                <div class="col-2">
+                <div class="sidebar col-md-2">
+                  <div class="sidebar_inner">
                     <div class="row ">
                         <div class="col-3 align-self-center">
                             <img class="w-100 rounded-circle border" src="https://khoroblox.vn/assets/images/unknown-avatar.jpg">
@@ -98,8 +99,16 @@
                             </div>
                         </div>
                     </div>
+                    <div class="btn" id="btnHideMenu">
+                      <button class="btn bg-danger text-white rounded-circle"><i class="bx bxs-chevron-left"></i></button>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-10">
+                <div class="col-sm-12 col-md-10">
+                  <button class="menuToogle" id="btnShowMenu">
+                    <i class="tw-relative bx bx-menu tw-text-xl" style="top: -3px;"></i>
+                    <span>Menu</span>
+                  </button>
                   <div class="section p-4 background-color-245 rounde mb-3">
                     <div class="row">
                         <div>
