@@ -16,7 +16,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bolder navbar-nav-a" href="#">
+                        <a class="nav-link fw-bolder navbar-nav-a recharge-form-process" href="#">
                             <span class="navbar-nav-a-span d-inline-flex justify-content-center align-items-center rounded-1 h-1">
                                 <i class="fa-regular fa-credit-card"></i>
                             </span> 
