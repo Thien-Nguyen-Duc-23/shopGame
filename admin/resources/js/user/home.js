@@ -104,6 +104,26 @@ $(document).ready(function () {
         $('#modal-client-login').modal('show');
     });
 
+    $(document).on('click', '.recharge-form-process', function (e) {
+        e.preventDefault();
+        $('#modal-chanrge-money').modal('show');
+    });
+
+    $(document).on('click', '#showModalBank', function (e) {
+        e.preventDefault();
+        $('#bankModal').modal('show');
+    });
+
+    $(document).on('click', '#showModalMomo', function (e) {
+        e.preventDefault();
+        $('#momoModal').modal('show');
+    });
+
+    $(document).on('click', '#showModalZalo', function (e) {
+        e.preventDefault();
+        $('#modalZalo').modal('show');
+    });
+
     $(document).on('click', '#client-submit-login', function (e) {
         e.preventDefault();
         var userName = $('.id-form-user-name').val();
@@ -217,6 +237,16 @@ $(document).ready(function () {
             $(".id-error-form-password").attr("hidden", true);
         }, 7000 ); // 5 secs
     });
+
+    $('#btnHideMenu').click(function() {
+        $('.sidebar').hide()
+        $('#btnShowMenu').show()
+    })
+
+    $('#btnShowMenu').click(function() {
+        $('.sidebar').show()
+        $(this).hide()
+    })
 
     function validateEmail(email)
     {
